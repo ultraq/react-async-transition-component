@@ -15,10 +15,11 @@
 		"test": "npm run lint && jest",
 		"build": "npm run build:cjs && npm run build:es",
 		"build:cjs": "cross-env-shell BABEL_ENV=cjs babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.cjs.js --source-maps",
-		"build:es": "cross-env-shell BABEL_ENV=es babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.es.js --source-maps"
+		"build:es": "cross-env-shell BABEL_ENV=es babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.es.js --source-maps",
+		"prepublishOnly": "npm run build"
 	},
 	"peerDependencies": {
-		"prop-types": "^15.0.0",
+		"prop-types": "15",
 		"react": "16"
 	},
 	"dependencies": {
