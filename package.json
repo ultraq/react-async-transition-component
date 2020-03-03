@@ -1,0 +1,51 @@
+{
+	"name": "@ultraq/react-async-transition-component",
+	"version": "0.1.0",
+	"description": "A container for react-async-component for performing component transitions",
+	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
+	"license": "Apache-2.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ultraq/react-async-transition-component.git"
+	},
+	"module": "AsyncTransitionComponent.es.js",
+	"main": "AsyncTransitionComponent.cjs.js",
+	"scripts": {
+		"lint": "eslint \"*.js\"",
+		"test": "npm run lint && jest",
+		"build": "npm run build:cjs && npm run build:es",
+		"build:cjs": "cross-env-shell BABEL_ENV=cjs babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.cjs.js --source-maps",
+		"build:es": "cross-env-shell BABEL_ENV=es babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.es.js --source-maps"
+	},
+	"peerDependencies": {
+		"prop-types": "^15.0.0",
+		"react": "16"
+	},
+	"dependencies": {
+		"@ultraq/react-async-component": "^0.1.0",
+		"classnames": "^2.2.6"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.8.6",
+		"@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+		"@babel/preset-env": "^7.8.6",
+		"@babel/preset-react": "^7.8.3",
+		"babel-eslint": "^10.1.0",
+		"babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+		"cross-env": "^7.0.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.2",
+		"eslint": "^6.8.0",
+		"eslint-config-ultraq": "^2.2.0",
+		"eslint-plugin-react": "^7.18.3",
+		"jest": "^25.1.0",
+		"prop-types": "^15.7.2",
+		"react": "^16.13.0",
+		"react-dom": "^16.13.0",
+		"react-test-renderer": "^16.13.0"
+	},
+	"engines": {
+		"node": ">=10"
+	}
+}
