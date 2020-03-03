@@ -2,6 +2,10 @@
 react-async-transition-component
 ================================
 
+[![Build Status](https://travis-ci.com/ultraq/react-async-transition-component.svg?branch=master)](https://travis-ci.com/ultraq/react-async-transition-component)
+[![npm](https://img.shields.io/npm/v/@ultraq/react-async-transition-component.svg?maxAge=3600)](https://www.npmjs.com/package/@ultraq/react-async-transition-component)
+[![License](https://img.shields.io/github/license/ultraq/react-async-transition-component.svg?maxAge=2592000)](https://github.com/ultraq/react-async-transition-component/blob/master/LICENSE.txt)
+
 A container for [react-async-component](https://github.com/ultraq/react-async-component)
 for performing component transitions.
 
