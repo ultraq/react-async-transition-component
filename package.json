@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/react-async-transition-component",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"description": "A container for react-async-component for performing component transitions",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -23,7 +23,7 @@
 		"react": "16"
 	},
 	"dependencies": {
-		"@ultraq/react-async-component": "^0.1.0",
+		"@ultraq/react-async-component": "^1.0.0",
 		"classnames": "^2.2.6"
 	},
 	"devDependencies": {
