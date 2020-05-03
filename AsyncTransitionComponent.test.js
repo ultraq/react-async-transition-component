@@ -21,7 +21,7 @@ describe('react-async-transition-component', function() {
 		let {container} = render(
 			<AsyncTransitionComponent className={testClass} loader={loader}/>
 		);
-		expect(container.firstElementChild.classList.contains(testClass)).toBe(true);
+		expect(container.firstElementChild).toHaveClass(testClass);
 	});
 
 	test('Applies transition class after underlying component loaded', async function() {
@@ -35,9 +35,9 @@ describe('react-async-transition-component', function() {
 		let {container} = render(
 			<AsyncTransitionComponent transitionClassName={transitionClass} loader={loader}/>
 		);
-		expect(container.firstElementChild.classList.contains(transitionClass)).toBe(false);
+		expect(container.firstElementChild).not.toHaveClass(transitionClass);
 		jest.runAllTimers();
 		await loader;
-		expect(container.firstElementChild.classList.contains(transitionClass)).toBe(true);
+		expect(container.firstElementChild).toHaveClass(transitionClass);
 	});
 });
