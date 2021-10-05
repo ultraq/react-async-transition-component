@@ -17,13 +17,9 @@
 /* eslint-env jest */
 import AsyncTransitionComponent from './AsyncTransitionComponent.js';
 
-import {configure, mount} from 'enzyme';
-import Adapter            from 'enzyme-adapter-react-16';
-import React              from 'react';
-
-configure({
-	adapter: new Adapter()
-});
+import '@testing-library/jest-dom';
+import {render} from '@testing-library/react';
+import React    from 'react';
 
 /**
  * Tests for the async transition component.
@@ -39,28 +35,31 @@ describe('react-async-transition-component', function() {
 			// Never resolves
 		});
 		let testClass = 'testclass';
-		let wrapper = mount(
+		let {container} = render(
 			<AsyncTransitionComponent className={testClass} loader={loader}/>
 		);
-		expect(wrapper.is(`.${testClass}`)).toBe(true);
+
+		expect(container.firstElementChild).toHaveClass(testClass);
 	});
 
-	test('Applies transition class after underlying component loaded', function() {
+	test('Applies transition class after underlying component loaded', async function() {
 		jest.useFakeTimers();
+
 		let loader = new Promise(resolve => {
 			setTimeout(() => {
 				resolve(SomeComponent);
 			}, 200);
 		});
 		let transitionClass = 'transitionclass';
-		let wrapper = mount(
+		let {container} = render(
 			<AsyncTransitionComponent transitionClassName={transitionClass} loader={loader}/>
 		);
-		expect(wrapper.is(`.${transitionClass}`)).toBe(false);
+
+		expect(container.firstElementChild).not.toHaveClass(transitionClass);
 		jest.runAllTimers();
-		return loader.then(() => {
-			wrapper.update();
-			expect(wrapper.find(`.${transitionClass}`).exists()).toBe(true);
-		});
+		await loader;
+		expect(container.firstElementChild).toHaveClass(transitionClass);
+
+		jest.useRealTimers();
 	});
 });
