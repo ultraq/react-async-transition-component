@@ -6,15 +6,9 @@
  */
 module.exports = {
 	collectCoverage: true,
-	collectCoverageFrom: [
-		'AsyncTransitionComponent.js'
-	],
-	coverageDirectory: 'coverage',
 	coverageReporters: [
 		'html',
+		'lcov',
 		'text-summary'
-	],
-	setupFiles: [
-		'./jest.setup.js'
 	]
 };

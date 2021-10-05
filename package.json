@@ -1,6 +1,6 @@
 {
 	"name": "@ultraq/react-async-transition-component",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A container for react-async-component for performing component transitions",
 	"author": "Emanuel Rabina <emanuelrabina@gmail.com> (http://www.ultraq.net.nz/)",
 	"license": "Apache-2.0",
@@ -10,12 +10,13 @@
 	},
 	"module": "AsyncTransitionComponent.es.js",
 	"main": "AsyncTransitionComponent.cjs.js",
+	"sideEffects": false,
 	"scripts": {
 		"lint": "eslint \"*.js\"",
-		"test": "npm run lint && jest",
+		"test": "jest",
 		"build": "npm run build:cjs && npm run build:es",
-		"build:cjs": "cross-env-shell BABEL_ENV=cjs babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.cjs.js --source-maps",
-		"build:es": "cross-env-shell BABEL_ENV=es babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.es.js --source-maps",
+		"build:cjs": "cross-env BABEL_ENV=cjs babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.cjs.js --source-maps",
+		"build:es": "cross-env BABEL_ENV=es babel AsyncTransitionComponent.js --out-file AsyncTransitionComponent.es.js --source-maps",
 		"prepublishOnly": "npm run build"
 	},
 	"peerDependencies": {

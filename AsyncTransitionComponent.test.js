@@ -1,8 +1,13 @@
 /* eslint-env jest */
 import AsyncTransitionComponent from './AsyncTransitionComponent.js';
 
-import {mount} from 'enzyme';
-import React   from 'react';
+import {configure, mount} from 'enzyme';
+import Adapter            from 'enzyme-adapter-react-16';
+import React              from 'react';
+
+configure({
+	adapter: new Adapter()
+});
 
 /**
  * Tests for the async transition component.
