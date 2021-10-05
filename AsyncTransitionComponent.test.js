@@ -27,7 +27,7 @@ import React    from 'react';
 describe('react-async-transition-component', function() {
 
 	const SomeComponent = () => (
-		<div id="some-component">Hello!</div>
+		<div>Hello!</div>
 	);
 
 	test('Applies class name', function() {
