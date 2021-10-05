@@ -3,8 +3,9 @@ react-async-transition-component
 ================================
 
 [![Build Status](https://github.com/ultraq/react-async-transition-component/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/react-async-transition-component/actions)
+[![Coverage Status](https://coveralls.io/repos/github/ultraq/react-async-transition-component/badge.svg?branch=main)](https://coveralls.io/github/ultraq/react-async-transition-component?branch=main)
 [![npm](https://img.shields.io/npm/v/@ultraq/react-async-transition-component.svg?maxAge=3600)](https://www.npmjs.com/package/@ultraq/react-async-transition-component)
-[![License](https://img.shields.io/github/license/ultraq/react-async-transition-component.svg?maxAge=2592000)](https://github.com/ultraq/react-async-transition-component/blob/master/LICENSE.txt)
+[![Bundlephobia minified size](https://img.shields.io/bundlephobia/min/@ultraq/react-async-transition-component)](https://bundlephobia.com/result?p=@ultraq/react-async-transition-component)
 
 A container for [react-async-component](https://github.com/ultraq/react-async-component)
 for performing component transitions.
